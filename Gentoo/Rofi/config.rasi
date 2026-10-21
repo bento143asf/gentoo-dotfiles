@@ -1,0 +1,153 @@
+configuration {
+    modi: "drun,run";
+    font: "JetBrains Mono 11";
+    show-icons: true;
+    icon-theme: "Papirus";
+    drun-display-format: "{name}";
+    display-drun: "Apps";
+    display-run: "Executar";
+    disable-history: false;
+    hide-scrollbar: true;
+    matching: "fuzzy";
+    sorting-method: "fzf";
+    sort: true;
+    click-to-exit: true;
+    hover-select: true;
+    me-select-entry: "";
+    me-accept-entry: "MousePrimary";
+}
+
+* {
+    bg:       rgba ( 28, 27, 34, 90 % );
+    bg-alt:   rgba ( 43, 42, 51, 92 % );
+    fg:       #ffffff;
+    fg-dim:   rgba ( 255, 255, 255, 50 % );
+    accent:   #E5B9F4;
+    lavender: #B5B0E8;
+    dark:     #1c1b22;
+
+    background-color: transparent;
+    text-color: @fg;
+    margin: 0;
+    padding: 0;
+    spacing: 0;
+}
+
+window {
+    transparency: "real";
+    location: center;
+    anchor: center;
+    width: 580px;
+    border: 2px;
+    border-color: @accent;
+    border-radius: 0px;
+    background-color: @bg;
+}
+
+mainbox {
+    children: [ inputbar, listview, mode-switcher ];
+    background-color: transparent;
+}
+
+inputbar {
+    padding: 14px;
+    spacing: 12px;
+    background-color: @bg-alt;
+    children: [ prompt, entry, num-filtered-rows, textbox-num-sep, num-rows ];
+}
+
+prompt {
+    padding: 8px 14px;
+    background-color: @accent;
+    text-color: @dark;
+    font: "JetBrains Mono Bold 11";
+    vertical-align: 0.5;
+}
+
+entry {
+    padding: 8px 4px;
+    placeholder: "Pesquisar...";
+    placeholder-color: @fg-dim;
+    vertical-align: 0.5;
+}
+
+num-filtered-rows {
+    expand: false;
+    text-color: @fg-dim;
+    vertical-align: 0.5;
+}
+
+textbox-num-sep {
+    expand: false;
+    str: "/";
+    text-color: @fg-dim;
+    vertical-align: 0.5;
+}
+
+num-rows {
+    expand: false;
+    text-color: @fg-dim;
+    vertical-align: 0.5;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    fixed-height: true;
+    cycle: true;
+    scrollbar: false;
+    spacing: 4px;
+    padding: 10px;
+    background-color: transparent;
+}
+
+element {
+    padding: 8px 12px;
+    spacing: 12px;
+    border: 0px 0px 0px 3px;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+element normal.normal,
+element alternate.normal {
+    background-color: transparent;
+    text-color: @fg;
+}
+
+element selected.normal {
+    background-color: rgba ( 229, 185, 244, 16 % );
+    border-color: @accent;
+    text-color: @fg;
+}
+
+element-icon {
+    size: 28px;
+    vertical-align: 0.5;
+    background-color: transparent;
+}
+
+element-text {
+    vertical-align: 0.5;
+    highlight: bold #E5B9F4;
+    background-color: transparent;
+    text-color: inherit;
+}
+
+mode-switcher {
+    padding: 0px 10px 10px 10px;
+    spacing: 8px;
+    background-color: transparent;
+}
+
+button {
+    padding: 8px;
+    background-color: @bg-alt;
+    text-color: @fg-dim;
+    horizontal-align: 0.5;
+}
+
+button selected {
+    background-color: @accent;
+    text-color: @dark;
+}
